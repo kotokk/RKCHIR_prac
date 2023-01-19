@@ -1,0 +1,334 @@
+﻿
+/*Фоновые свойства*/
+body {
+    background-image: url("https://img.freepik.com/free-vector/pastel-watercolor-painted-background_23-2148959636.jpg?w=2000");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+/*общее*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Montserrat';
+}
+/*шапка*/
+
+/*лого в хэдере*/
+header img{
+    height: 40px;
+    width: 40px;
+}
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f6c9b2;
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #FFF;
+  height: 80px;
+  padding: 1em;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: #f6c9b2;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+@media screen and (orientation: portrait){
+  .menu-button-container {
+      display: flex;
+      visibility: visible;
+    }
+    .menu {
+      position: absolute;
+      top: 0;
+      margin-top: 50px;
+      left: 0;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    #menu-toggle ~ .menu li {
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    #menu-toggle:checked ~ .menu li {
+      border: 1px solid #995f42;
+      height: 2.5em;
+      padding: 0.5em;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .menu > li {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0.5em 0;
+      width: 100%;
+      color: #f6c9b2;
+      background-color: #f6c9b2;
+      opacity: 0.69;
+    }
+    .menu > li:not(:last-child) {
+      border-bottom: 1px solid #444;
+    }
+  
+}
+a{text-decoration : none;
+color: #2f0b0b;
+font-size: large;}
+
+main{
+    margin-top: 100px;
+}
+/*заголовок страницы*/
+h1{
+   font-size: 50px;
+   text-align: center;
+   color: #572525;
+    font-family: "Montserrat";
+}
+
+
+
+/*Заголовки по абзацам*/
+h2 {
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #ffeadf;
+    text-align: center;
+    border: 1px solid #ffcbaf;
+    border-radius: 30px;
+    color: #572525;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 45px;
+    font-family: "Montserrat";
+}
+/*Названия вкусов мороженого*/
+h3 {
+    font-size: 28px;
+    margin: 0 auto;
+    margin-bottom: 0px;
+    color: #2f0b0b;
+    font-family: "Montserrat";
+}
+@media screen and (orientation: landscape) {
+    div.flex{
+    display: flex;
+    }
+    div.flex p{
+        flex-basis: 200%;
+        flex-grow: 2;
+    }
+}
+@media screen and (orientation: portrait) {
+    div.flex{
+    display: flex;
+    flex-direction: column;
+    }
+}
+
+div.fool{
+    display: flex;
+}
+.hero-section{
+  align-items: flex-start;
+  background-image: linear-gradient(15deg, #0f4667 0%, #2a6973 150%);
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 100%;
+}
+
+@media(min-width: 540px){
+  .card-grid{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media(min-width: 960px){
+  .card-grid{
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
+.card{
+  list-style: none;
+  position: relative;
+}
+
+.card:before{
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+.card__background{
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--spacing-l);
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  transform: scale(1) translateZ(0);
+  transition: 
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.card:hover .card__background{
+  transform: scale(1.05) translateZ(0);
+}
+
+.card-grid:hover > .card:not(:hover) .card__background{
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.card__content{
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+}
+
+.card__category{
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+}
+
+.card__heading{
+  color: var(--text-lighter);
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+}
+
+/*Общий текст*/
+p {
+    margin: 35px;
+    font-family: "Montserrat";
+    font-size: 24px;
+    color: #2f0b0b;
+}
+
+
+
+
+
+/*Оформление подписи мороженого*/
+p.description{
+    margin-top: 8px;
+    font-size: 18px;
+}
+
+
+
+/*Футер*/
+footer {
+    height: 20px;
+    bottom: 0;
+}
+/*ссылки в футере*/
+    footer a {
+        text-align: center;
+        text-decoration: none;
+        background: #ffeadf;
+        color: #2f0b0b;
+        padding: 0px 15px;
+        font-family: "Montserrat";
+        line-height: 50px;
+        display: block;
+    }
+/*заголовок футера*/
+    footer h4 {
+        text-align: center;
+        height: 50px;
+        background: #ffeadf;
+        padding-left: 0;
+        font-family: "Montserrat";
+    }

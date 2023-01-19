@@ -1,0 +1,445 @@
+﻿
+/*Фоновые свойства*/
+body {
+    background-image: url("https://img.freepik.com/free-vector/pastel-watercolor-painted-background_23-2148959636.jpg?w=2000");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+/*общее*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Montserrat';
+}
+/*шапка*/
+
+/*лого в хэдере*/
+header img{
+    height: 40px;
+    width: 40px;
+}
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f6c9b2;
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #FFF;
+    height: 80px;
+    padding: 1em;
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu > li {
+    margin: 0 1rem;
+    overflow: hidden;
+  }
+  
+  .menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+  }
+  
+  #menu-toggle {
+    display: none;
+  }
+  
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+  }
+  
+  .menu-button::before {
+    content: '';
+    margin-top: -8px;
+  }
+  
+  .menu-button::after {
+    content: '';
+    margin-top: 8px;
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
+@media screen and (orientation: portrait){
+    .menu-button-container {
+        display: flex;
+        visibility: visible;
+      }
+      .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 50px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+      #menu-toggle ~ .menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      #menu-toggle:checked ~ .menu li {
+        border: 1px solid #333;
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      .menu > li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: white;
+        background-color: #572525;
+        opacity: 0.69;
+      }
+      .menu > li:not(:last-child) {
+        border-bottom: 1px solid #444;
+      }
+    
+}
+
+main{
+    margin-top: 100px;
+}
+/*заголовок страницы*/
+h1{
+   font-size: 50px;
+   text-align: center;
+   color: #572525;
+    font-family: "Montserrat";
+}
+
+
+
+/*Заголовки по абзацам*/
+h2 {
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #ffeadf;
+    text-align: center;
+    border: 1px solid #ffcbaf;
+    border-radius: 30px;
+    color: #572525;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 45px;
+    font-family: "Montserrat";
+}
+/*Названия вкусов мороженого*/
+h3 {
+    font-size: 28px;
+    margin: 0 auto;
+    margin-bottom: 0px;
+    color: #2f0b0b;
+    font-family: "Montserrat";
+}
+@media screen and (orientation: landscape) {
+    div.flex{
+    display: flex;
+    }
+    div.flex p{
+        flex-basis: 200%;
+        flex-grow: 2;
+    }
+}
+@media screen and (orientation: portrait) {
+    div.flex{
+    display: flex;
+    flex-direction: column;
+    }
+}
+
+div.fool{
+    display: flex;
+}
+
+/*Общий текст*/
+p {
+    margin: 35px;
+    font-family: "Montserrat";
+    font-size: 24px;
+    color: #2f0b0b;
+}
+
+.hover-effect-scale {
+  list-style:none;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+}
+.hover-effect-scale li {
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+  margin: 0;
+  border: 5px solid #fff;
+  box-shadow: 1px 3px 1px 0 rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+/* Заголовок, текст и ссылка */
+.hover-effect-scale li h3{
+  color: #fff;
+  margin: 5px;
+}
+.hover-effect-scale li p{
+  color: #fff;
+  margin: 5px;
+}
+.hover-effect-scale li a {
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  color: #fff;
+  background: #000;
+  border-radius: 5px;
+  margin: 0 auto;
+  transition: all 0.4s ease-in-out;
+}
+.hover-effect-scale li a:hover {
+  background: #454545;
+  color: #fff;
+}
+/* Выезжающий блок с текстом */ 
+.hover-effect-scale li > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.hover-effect-scale li:hover > div {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+.hover-effect-scale li div {
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.35); /* Фон блока при наведении */
+  transition: all 0.4s ease-in-out;
+  color: #fff;
+}
+.hover-effect-scale li img {
+  transition: all 0.2s linear;
+}
+.hover-effect-scale li:hover img {
+  transform: scale(1.3);
+}
+.hover-effect-scale li:hover div {
+  opacity: 1;
+}
+.hover-effect-scale img{
+  width: 300px;
+  height: 300px;
+}
+/*кнопка 1 */
+.gradient-button {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 20px 30px;
+  margin: 10px 20px;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(to right, rgb(247, 240, 233) 0%, #e2a57c 51%, #f8a663 100%);
+  background-size: 200% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: .5s;
+}
+.gradient-button:hover {
+  background-position: right center;
+}
+
+/*кнопка 2*/
+.border-button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 20px 30px;
+  margin: 10px 20px;
+  position: relative;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, .4);
+  background: #f6c9b2;
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.border-button:before, .border-button:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  box-sizing: border-box;
+}
+.border-button:before {
+  bottom: 0;
+  left: 0;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  transition: 0s ease opacity .8s, .2s ease width .4s, .2s ease height .6s;
+}
+.border-button:after {
+  top: 0;
+  right: 0;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  transition: 0s ease opacity .4s, .2s ease width, .2s ease height .2s;
+}
+.border-button:hover:before, 
+.border-button:hover:after {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+}
+.border-button:hover:before {
+  transition: 0s ease opacity 0s, .2s ease height, .2s ease width .2s;
+}
+.border-button:hover:after {
+  transition: 0s ease opacity .4s, .2s ease height .4s, .2s ease width .6s;
+}
+.border-button:hover {
+  background: rgba(255, 255, 255, .2);
+}
+
+/*кнопка 3*/
+.floating-button {
+  text-decoration: none;
+  display: inline-block;
+  width: 140px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 45px;
+  margin: 10px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: #524f4e;
+  background: white;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+  transition: .3s;
+}
+.floating-button:hover {
+  background: #e2a57c;
+  box-shadow: 0 15px 20px #572525(46, 229, 157, .4);
+  color: white;
+  transform: translateY(-7px);
+}
+/*кнопка 4*/
+.pressed-button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 12px 40px;
+  margin: 10px 20px;
+  border-radius: 30px;
+  background-image: linear-gradient(45deg, rgb(247, 240, 233) 0%, #f7bb94 51%, #f8a663 100%);
+  background-position: 100% 0;
+  background-size: 200% 200%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: white;
+  box-shadow: 0 16px 32px 0 rgba(0, 40, 120, .35);
+  transition: .5s;
+}
+.pressed-button:hover {
+  box-shadow: 0 0 0 0 rgba(0, 40, 120, 0);
+  background-position: 0 0;
+}
+
+/*Оформление подписи мороженого*/
+p.description{
+    margin-top: 8px;
+    font-size: 18px;
+}
+
+/*Цитата*/
+aside {
+    background-color: #ffeadf;
+    color: #572525;
+    height: auto;
+    text-align: right;
+    line-height: 40px;
+    margin: 35px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    border-radius: 30px;
+}
+
+/*Футер*/
+footer {
+    height: 20px;
+    bottom: 0;
+}
+/*ссылки в футере*/
+    footer a {
+        text-align: center;
+        text-decoration: none;
+        background: #ffeadf;
+        color: #2f0b0b;
+        padding: 0px 15px;
+        font-family: "Montserrat";
+        line-height: 50px;
+        display: block;
+    }
+/*заголовок футера*/
+    footer h4 {
+        text-align: center;
+        height: 50px;
+        background: #ffeadf;
+        padding-left: 0;
+        font-family: "Montserrat";
+    }
